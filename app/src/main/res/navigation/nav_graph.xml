@@ -9,6 +9,7 @@
         android:id="@+id/FirstFragment"
         android:name="com.example.randomgenerator2024.FirstFragment"
         android:label="@string/first_fragment_label"
+        android:fontFamily="@font/montserrat"
         tools:layout="@layout/fragment_first">
 
         <action
@@ -19,6 +20,7 @@
         android:id="@+id/SecondFragment"
         android:name="com.example.randomgenerator2024.SecondFragment"
         android:label="@string/second_fragment_label"
+        android:fontFamily="@font/montserrat"
         tools:layout="@layout/fragment_second">
 
         <action
