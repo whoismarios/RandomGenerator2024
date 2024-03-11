@@ -9,6 +9,7 @@
     <string name="random">RANDOM</string>
     <string name="count">COUNT</string>
     <string name="toast">TOAST</string>
+    <string name="reset">RESET</string>
     <string name="previous">PREVIOUS</string>
     <string name="message"> Here is a random number between ... </string>
 

@@ -29,6 +29,24 @@ public class FirstFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        final int[] counter = {0};
+
+        binding.countBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                counter[0]++;
+                binding.countTxt.setText(String.valueOf(counter[0]));
+            }
+        });
+
+        binding.resetBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                counter[0] = 0;
+                binding.countTxt.setText(String.valueOf(counter[0]));
+            }
+        });
+
         binding.randomBtn.setOnClickListener(v ->
                 NavHostFragment.findNavController(FirstFragment.this)
                         .navigate(R.id.action_FirstFragment_to_SecondFragment)
