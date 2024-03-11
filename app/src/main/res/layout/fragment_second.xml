@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/buttonBackground"
         android:fontFamily="@font/montserrat"
-        android:text="@string/previous"
+        android:text="@string/back"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@id/randomTxt"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,11 +35,15 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="258dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat"
         android:text="@string/message"
-        tools:layout_editor_absoluteX="37dp"
-        tools:layout_editor_absoluteY="38dp"
+        android:textColor="#FFFFFF"
+        android:textColorLink="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/BackBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/message" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -47,10 +47,13 @@ public class FirstFragment extends Fragment {
             }
         });
 
-        binding.randomBtn.setOnClickListener(v ->
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment)
-        );
+        binding.randomBtn.setOnClickListener(v -> {
+            Bundle bundle = new Bundle();
+            bundle.putInt("counterValue", counter[0]);
+            NavHostFragment.findNavController(FirstFragment.this)
+                    .navigate(R.id.action_FirstFragment_to_SecondFragment, bundle);
+        });
+
     }
 
     @Override

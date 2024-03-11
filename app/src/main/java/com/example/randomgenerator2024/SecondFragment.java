@@ -21,6 +21,7 @@ public class SecondFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
+
         binding = FragmentSecondBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
@@ -28,6 +29,13 @@ public class SecondFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        if (getArguments() != null) {
+            int counterValue = getArguments().getInt("counterValue", 0);
+            binding.randomTxt.setText(String.valueOf(counterValue));
+        } else {
+            binding.randomTxt.setText("0");
+        }
 
         binding.BackBtn.setOnClickListener(v ->
                 NavHostFragment.findNavController(SecondFragment.this)
