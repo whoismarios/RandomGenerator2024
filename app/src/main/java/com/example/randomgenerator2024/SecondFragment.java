@@ -11,6 +11,8 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.randomgenerator2024.databinding.FragmentSecondBinding;
 
+import java.util.Random;
+
 public class SecondFragment extends Fragment {
 
     private FragmentSecondBinding binding;
@@ -32,7 +34,11 @@ public class SecondFragment extends Fragment {
 
         if (getArguments() != null) {
             int counterValue = getArguments().getInt("counterValue", 0);
-            binding.randomTxt.setText(String.valueOf(counterValue));
+
+            String randomNumberString = returnRandomNumberAsString(counterValue);
+
+            binding.randomTxt.setText(randomNumberString);
+            binding.maxNumber.setText(String.valueOf(counterValue));
         } else {
             binding.randomTxt.setText("0");
         }
@@ -47,6 +53,14 @@ public class SecondFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    public String returnRandomNumberAsString(int counterValue){
+        Random random = new Random();
+
+        int randomNumber = random.nextInt(counterValue + 1);
+        System.out.println("Random generated number = " + counterValue);
+        return Integer.toString(randomNumber);
     }
 
 }
