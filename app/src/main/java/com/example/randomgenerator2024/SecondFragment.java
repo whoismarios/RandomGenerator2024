@@ -1,5 +1,6 @@
 package com.example.randomgenerator2024;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,6 +30,7 @@ public class SecondFragment extends Fragment {
 
     }
 
+    @SuppressLint("SetTextI18n")
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
@@ -38,7 +40,7 @@ public class SecondFragment extends Fragment {
             String randomNumberString = returnRandomNumberAsString(counterValue);
 
             binding.randomTxt.setText(randomNumberString);
-            binding.maxNumber.setText(String.valueOf(counterValue));
+            binding.messageTxt.setText(getString(R.string.message) + " " + counterValue);
         } else {
             binding.randomTxt.setText("0");
         }
@@ -59,7 +61,6 @@ public class SecondFragment extends Fragment {
         Random random = new Random();
 
         int randomNumber = random.nextInt(counterValue + 1);
-        System.out.println("Random generated number = " + counterValue);
         return Integer.toString(randomNumber);
     }
 
