@@ -32,7 +32,8 @@ public class FirstFragment extends Fragment {
 
         final int[] counter = {0};
 
-        binding.countBtn.setOnClickListener(new View.OnClickListener() {
+        binding
+                .countBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 counter[0]++;
@@ -50,6 +51,9 @@ public class FirstFragment extends Fragment {
 
         binding.randomBtn.setOnClickListener(v -> {
             Bundle bundle = new Bundle();
+
+            if(counter[0] == 0) return;
+
             bundle.putInt("counterValue", counter[0]);
             NavHostFragment.findNavController(FirstFragment.this)
                     .navigate(R.id.action_FirstFragment_to_SecondFragment, bundle);
