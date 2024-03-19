@@ -52,7 +52,10 @@ public class FirstFragment extends Fragment {
         binding.randomBtn.setOnClickListener(v -> {
             Bundle bundle = new Bundle();
 
-            if(counter[0] == 0) return;
+            if(counter[0] == 0) {
+                Toast.makeText(v.getContext(), "The counter value must be greater than 0 !", Toast.LENGTH_LONG).show();
+                return;
+            }
 
             bundle.putInt("counterValue", counter[0]);
             NavHostFragment.findNavController(FirstFragment.this)
